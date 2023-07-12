@@ -1,0 +1,263 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/backgroud-off.gif);
+  --stroke-color: rgba(255, 255, 255, 0.05);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(255, 255, 255, 0.05);
+  --highlight-color: rgba(255, 255, 255, 0.02);
+  --boder-color: rgba(255, 255, 255, 0.897);
+  --switch-bg-url: url(./svg/lightbulb-off.svg);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/background-on.gif);
+  --stroke-color: rgba(255, 255, 255, 0.05);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --boder-color: rgb(0, 0, 0);
+  --switch-bg-url: url(./svg/lightbulb-fill.svg);
+}
+
+body {
+  /*
+background-image: url(./diretorio da imagem/imagem.jpg);
+background-repeat: no-repeat;
+background-position: top center;
+background-size: cover;
+}
+
+---Agrupamento do codigo em somente 1 linha de codigo --
+
+----Pode ter elementos que só funcione em imagens pois foi alterado 
+depois que o projeto foi concluido mas não muda nada no site-----
+
+*/
+  background: var(--bg-url) no-repeat top center/cover;
+}
+
+body * {
+  font-family: "inter", sans-serif;
+  color: var(--text-color);
+}
+
+#container {
+  width: 100%;
+  max-width: 588px;
+  margin: 56px auto 0px;
+  padding: 0 24px;
+}
+
+/* ALINHAMENTO DA FOTO*/
+#profile {
+  text-align: center;
+}
+
+#profile img {
+  width: 112px;
+  border-radius: 50%;
+}
+
+#profile a {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: 8px;
+  margin-bottom: 4px;
+  text-decoration: none;
+}
+
+
+/*switch botão liga e desliga mudando o modo da pagina*/
+
+#switch {
+  position: relative;
+  width: 64px;
+  margin: 30px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+  animation: slide-back 0.2s ;
+}
+#switch button:hover{
+  outline: 8px solid var(--highlight-color);
+}
+
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background-color: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+.light #switch button {
+  animation: slide-in 0.2s forwards;
+  
+}
+
+.light #switch button:hover{
+  outline: 8px solid var(--highlight-color);
+}
+
+/* LINKS E DONWLOADS*/
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+ul li a {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  padding: 16px 24px;
+
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: background 1s;
+}
+
+/* PSEUDO-SELECTOR*/
+
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+ul li img {
+  width: 21px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+/* links sociais estilizaçao*/
+
+#social-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px 0;
+  font-size: 24px;
+}
+
+#social-links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  width: 15%;
+  transition: background 0.2s;
+  border-radius: 50%;
+}
+
+#social-links a:hover {
+  background: var(--highlight-color);
+  padding: 16px;
+  border-radius: 50%;
+  border: 1px solid var(--boder-color);
+}
+/* rodapé da pagina estilização e alinhamento*/
+footer {
+  padding: 24px 0;
+  text-align: center;
+  color: var(--text-color);
+  font-size: 17px;
+  text-decoration: underline;
+  letter-spacing: 1px;
+}
+
+/* Media queries*/
+
+
+@media (max-width: 768px) {
+  
+  #container {
+    max-width: 90%;
+  }
+
+ 
+  #profile {
+    text-align: left;
+  }
+
+ 
+  #switch {
+    margin: 10px auto;
+  }
+
+  
+  #social-links {
+    gap: 8px;
+  }
+}
+
+
+@media (max-width: 576px) {
+ 
+  
+  #container {
+    padding: 0 16px;
+  }
+
+ 
+  #profile img {
+    width: 96px;
+  }
+
+
+  #social-links {
+    font-size: 20px;
+  }
+}
+
+/* ANIMAÇÕES CSS*/
+
+@keyframes slide-in {
+ from {
+  left: 0;
+ }
+ to{
+  left: 50%;
+ }
+
+
+}
+
+@keyframes slide-back{
+  from{
+    left:50%;
+  }to{
+    left:0;
+  }
+}
