@@ -368,7 +368,7 @@ ul li img {
 
 /* rodapé da pagina estilização e alinhamento*/
 footer {
-  padding: 24px 0px;
+  padding: 24px 0;
   text-align: center;
   color: var(--text-color);
   font-size: 17px;
