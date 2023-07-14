@@ -40,8 +40,8 @@ background-size: cover;
 depois que o projeto foi concluido mas não muda nada no site-----
 
 */
-  background: var(--bg-url) no-repeat top center/cover;
-  height: 100vh;
+  background: var(--bg-url)  top center/cover;
+  height: 110vh;
 }
 
 body * {
