@@ -41,6 +41,7 @@ depois que o projeto foi concluido mas não muda nada no site-----
 
 */
   background: var(--bg-url) no-repeat top center/cover;
+  height: 100vh;
 }
 
 body * {
@@ -368,18 +369,23 @@ ul li img {
 
 /* rodapé da pagina estilização e alinhamento*/
 footer {
-  padding: 24px 0;
+  padding: 24px 0px;
   text-align: center;
   color: var(--text-color);
   font-size: 17px;
   text-decoration: underline;
   letter-spacing: 1px;
+
 }
 
 
 /* Media queries for mobile screens */
 @media (max-width: 768px) {
-  /* Update styles as per your requirements for mobile screens */
+
+  body {
+    width: 100%;
+  }
+
   #container {
     margin-top: 36px;
     padding: 0 16px;
@@ -409,9 +415,21 @@ footer {
     height: 16px;
   }
 
+  
+   
+  /* Media queries for screens with resolution 414x896 */
+@media (max-width: 414px){
+  
+
+ 
+
+  #container {
+    margin-top: 36px;
+    padding: 0 16px;
+  }
 
 
-
+}
 
 /* ANIMAÇÕES CSS*/
 
@@ -429,7 +447,8 @@ footer {
 @keyframes slide-back {
   from{
     left:50%;
-  }to{
+  }
+  to{
     left:0;
   }
 }
