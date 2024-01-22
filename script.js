@@ -2,15 +2,6 @@ function toggleMode() {
   const html = document.documentElement
   html.classList.toggle("light")
 
-  //    EXEMPLO DA LOGICA A CIMA ^^^^///
-
-  ///const html= document.html
-
-  //  if(html.classList.contains('light')){
-  //      html.classList.remove('light')
-  //   } else {
-  ///       html.classlist.add('light')
-  /// }
 
 
   ///TROCA DE IMAGEM E BACKGROUND QUANDO APERTA O BOTÃO
@@ -20,7 +11,7 @@ if(html.classList.contains("light")){
     img.setAttribute("src", "./assets/avatar-on.jpg")
 
 }else{
-    img.setAttribute("src", "./assets/avatar-off.jpg")
+    img.setAttribute("src", "./assets/avatar-off.png")
 }
 
 
